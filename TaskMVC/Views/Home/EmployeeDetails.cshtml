@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "GetEmployeeById";
+    @model EmployeeById
+}
+
+
+
+<div>
+    <h1>Employee @Model.Name Info:</h1>
+    <ul class="list-group">
+        <li class="list-group-item">Join Date: @Model.JoinDate</li>
+        <li class="list-group-item">Gender: @Model.Gender</li>
+        <li class="list-group-item">Phone: @Model.Phone</li>
+        <li class="list-group-item">Salary: @Model.Salary $</li>
+    </ul>
+
+    <br />
+    <br />
+    <br />
+    <a asp-action="index" asp-controller="Home" class="btn btn-outline-danger"> Back</a>
+
+</div>

@@ -1,0 +1,57 @@
+﻿@{
+    @model EmployeeById
+}
+    <partial name="_ValidationScriptsPartial" />
+
+<form asp-action="@(Model != null ? "UpdateEmployee" : "AddEmployee")" method="post">
+    @if (Model != null)
+    {
+        <input type="hidden" asp-for="Id" />
+    }
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Phone" class="form-label"></label>
+        <input asp-for="Phone" class="form-control" />
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Gender" class="form-label"></label>
+        <select asp-for="Gender" class="form-control">
+            <option selected disabled>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <span asp-validation-for="Gender" class="text-danger"></span>
+    </div>
+
+
+    <div class="mb-3">
+        <label asp-for="Salary" class="form-label"></label>
+        <input asp-for="Salary" class="form-control" />
+        <span asp-validation-for="Salary" class="text-danger"></span>
+    </div>
+
+    @if (Model is not null)
+    {
+        <button type="submit" class="btn btn-primary">Update Employee</button>
+    }
+    else
+    {
+        <button type="submit" class="btn btn-primary">Add Employee</button>
+    }
+
+</form>
+<br />
+<br />
+
+
+
+<a asp-action="index" asp-controller="Home" class="btn btn-outline-danger"> Back</a>
+
